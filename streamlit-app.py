@@ -4,6 +4,27 @@ import os
 import streamlit.components.v1 as components
 from analysis import text
 
+
+# ---
+
+from pathlib import Path
+
+# 1. Get the directory where THIS script is saved
+# This works whether you are on Windows, Mac, or Streamlit Cloud
+root_dir = Path(__file__).parent.resolve()
+
+# 2. Join it with your data path
+base_path = root_dir / "data" / "streamlit"
+
+# 3. Check if it exists
+if base_path.exists():
+    st.success(f"Path found! Full path is: {base_path}")
+    # List files to be sure
+    st.write("Files found:", os.listdir(base_path))
+else:
+    st.error(f"Path NOT found. Searching at: {base_path}")
+    st.write("Current working directory is:", os.getcwd())
+
 # --- 1. PAGE CONFIG & THEME ---
 st.set_page_config(page_title="CNN Visualization", layout="wide")
 
