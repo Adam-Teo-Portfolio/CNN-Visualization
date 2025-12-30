@@ -51,9 +51,9 @@ st.markdown("# CNN Visualization Application 🔍")
 from itertools import product
 
 st.markdown("### Display Matrix")
-class_options = ["Baseball", "Butterfly", "Daisy", "Cat", "Dog"]
-action_options = ["Noise", "Photo"]
-heatmap_options = ["Photo-Backdrop", "Black-Backdrop"]
+class_options = ["baseball", "butterfly", "daisy", "cat", "dog"]
+action_options = ["noise", "photo"]
+heatmap_options = ["photo-backdrop", "black-backdrop"]
 
 left, middle, right = st.columns(3, vertical_alignment="bottom")
 selected_classes = left.pills("Class", class_options, selection_mode="multi")
